@@ -8,7 +8,7 @@ session_start();
 require "includes/auth.php";
 
 //connect to db
-require "connect.php";
+require "includes/connect.php";
 
 
 // make sure we received an ID
@@ -16,19 +16,19 @@ require "connect.php";
 
 
 if (!isset($_GET['id'])) {
-  die("No post ID provided.");
+  die("No image ID provided.");
 }
 
-$postId = $_GET['id'];
+$imgId = $_GET['id'];
 
 
 // create the query 
-$sql = "DELETE FROM post where id = :id";
+$sql = "DELETE FROM images where id = :id";
 //prepare 
 $stmt = $pdo->prepare($sql);
 
 //bind 
-$stmt->bindParam(':id', $postId);
+$stmt->bindParam(':id', $imgId);
 
 //execute
 

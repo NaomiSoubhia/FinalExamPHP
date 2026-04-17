@@ -31,7 +31,7 @@ $pdo = null;
     <?php foreach ($images as $img): ?>
         <div class="container mx-auto text-center pt-2 bg-light rounded col-md-8 my-5 py-5" id="images">
             <div class="text-end">
-                <a class="col-1" href="delete.php?id=<?= urlencode($p['id']); ?>"
+                <a class="col-1" href="delete.php?id=<?= urlencode($img['id']); ?>"
                     onclick="return confirm('Are you sure you want to delete?');"><img class="mt-4 pe-2 col-1" src="images/trash.png" alt=""></a>
               
             </div>
