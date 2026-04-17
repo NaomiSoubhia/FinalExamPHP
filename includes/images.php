@@ -27,12 +27,12 @@ $pdo = null;
 
 <?php if (count($images) > 0): ?>
     <?php foreach ($images as $img): ?>
-        <div class="container mx-auto text-center pt-2 bg-light rounded col-md-8 my-5 py-5" id="post">
+        <div class="container mx-auto text-center pt-2 bg-light rounded col-md-8 my-5 py-5" id="images">
 
             <div class="py-3">
 
                 <?php if (!empty($img['image_path'])): ?>
-                    <img src="<?= htmlspecialchars($img['image_path']); ?>" class="rounded w-50 mx-auto d-block" alt="Post Image">
+                    <img src="<?= htmlspecialchars($img['image_path']); ?>" class="rounded w-50 mx-auto d-block" alt="Image">
 
                 <?php else: ?>
                     <p>No image found</p>

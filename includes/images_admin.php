@@ -29,11 +29,11 @@ $pdo = null;
 
 <?php if (count($images) > 0): ?>
     <?php foreach ($images as $img): ?>
-        <div class="container mx-auto text-center pt-2 bg-light rounded col-md-8 my-5 py-5" id="post">
+        <div class="container mx-auto text-center pt-2 bg-light rounded col-md-8 my-5 py-5" id="images">
             <div class="text-end">
-                <a href="delete.php?id=<?= urlencode($p['id']); ?>"
-                    onclick="return confirm('Are you sure you want to delete?');"><img class="mt-4 pe-3" src="images/trash.png" alt=""></a>
-                <a href="update.php?id=<?= urlencode($p['id']); ?>"><img class="mt-4 pe-5" src="images/pencil.png" alt=""></a>
+                <a class="col-1" href="delete.php?id=<?= urlencode($p['id']); ?>"
+                    onclick="return confirm('Are you sure you want to delete?');"><img class="mt-4 pe-2 col-1" src="images/trash.png" alt=""></a>
+                <a class="col-1" href="update.php?id=<?= urlencode($p['id']); ?>"><img class="mt-4 pe-5 col-1" src="images/pencil.png" alt=""></a>
 
             </div>
             <div class="py-3">

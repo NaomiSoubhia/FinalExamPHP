@@ -14,11 +14,11 @@
 
 
                 <div class="col-md-12 col-10">
-                <label for="review_image" class="form-label my-2">Image</label>
+                <label for="image" class="form-label my-2">Image</label>
                 <input
                     type="file"
-                    id="review_image"
-                    name="review_image"
+                    id="image"
+                    name="image"
                     class="form-control mb-4 my-2"
                     accept=".jpg,.jpeg,.png,.webp">
                 </div>
