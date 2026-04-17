@@ -33,8 +33,7 @@ $pdo = null;
             <div class="text-end">
                 <a class="col-1" href="delete.php?id=<?= urlencode($p['id']); ?>"
                     onclick="return confirm('Are you sure you want to delete?');"><img class="mt-4 pe-2 col-1" src="images/trash.png" alt=""></a>
-                <a class="col-1" href="update.php?id=<?= urlencode($p['id']); ?>"><img class="mt-4 pe-5 col-1" src="images/pencil.png" alt=""></a>
-
+              
             </div>
             <div class="py-3">
 
