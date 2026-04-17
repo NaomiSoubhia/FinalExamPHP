@@ -2,7 +2,9 @@
 //TODO:
 require "includes/connect.php";
 
-
+session_start();
+// Make sure the user is logged in before they can access this page
+require "includes/auth.php";
 
 //1. Write a SELECT query 
 $sql = "SELECT * FROM images order by image_date desc";
@@ -28,11 +30,16 @@ $pdo = null;
 <?php if (count($images) > 0): ?>
     <?php foreach ($images as $img): ?>
         <div class="container mx-auto text-center pt-2 bg-light rounded col-md-8 my-5 py-5" id="post">
+            <div class="text-end">
+                <a href="delete.php?id=<?= urlencode($p['id']); ?>"
+                    onclick="return confirm('Are you sure you want to delete?');"><img class="mt-4 pe-3" src="images/trash.png" alt=""></a>
+                <a href="update.php?id=<?= urlencode($p['id']); ?>"><img class="mt-4 pe-5" src="images/pencil.png" alt=""></a>
 
+            </div>
             <div class="py-3">
 
                 <?php if (!empty($img['image_path'])): ?>
-                    <img src="<?= htmlspecialchars($img['image_path']); ?>" class="rounded w-50 mx-auto d-block" alt="Post Image">
+                    <img src="<?= htmlspecialchars($img['image_path']); ?>" class="rounded w-50 d-block mx-auto " alt="Post Image">
 
                 <?php else: ?>
                     <p>No image found</p>
@@ -40,8 +47,7 @@ $pdo = null;
 
             </div>
             <h3 class="text-capitalize py-3"><?= htmlspecialchars($img['title']) ?></h3>
-            <p class=""><small><?= htmlspecialchars($img['image_date']) ?></small></p>
-
+            
         </div>
     <?php endforeach; ?>
 
